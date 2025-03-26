@@ -1,4 +1,19 @@
+*{
+    box-sizing: border-box;
+}
 body{
     margin: 0;
-    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: rgb(9, 5, 63);
+    color: white;
+    display: flex;
+}
+.header{
+    height: 150px;
+    width: 100%;
+    background-color: rgb(104, 89, 6);
+    display: flex;
+}.headline{
+    display: flex;
+    align-items: center;
 }
