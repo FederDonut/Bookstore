@@ -173,5 +173,16 @@ let books = [
       ]
     }
   ]
-  
+
+let bookImgs = [
+  "ai-generated-7875557_1280.jpg",
+  "ai-generated-8899413_1280.jpg",
+  "ai-generated-8594854_1280.png",  
+  "bible-1868070_1280.jpg",
+  "ai-generated-8594856_1280.png",  
+  "book-stack-8345013_1280.jpg",
+  "ai-generated-8699528_1280.jpg",  
+  "spell-book-8110990_1280.jpg",
+  "ai-generated-8716803_1280.jpg"
+];
   
