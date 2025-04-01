@@ -38,7 +38,7 @@ body{
 .content{
     height: 800px;
     width: 25%;
-    background-color: #34124b;
+    background-color: hsl(276, 61%, 18%);
     border-radius: 18px;
 }
 .separator{
