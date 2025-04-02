@@ -1,20 +1,40 @@
 
 
-console.table(books)
-let bookname = books[0].name;
+//console.table(books)
+
 function renderBookInfo(){
-    let bookInfo = document.getElementById('content');
+    let contentRef = document.getElementById('content');
     
     for (let i = 0;i < books.length; i++) {
-       
-        bookInfo.innerHTML += htmlTemplate(i);
+        const book = books[i];
+        contentRef.innerHTML += htmlTemplate(i,book);
+        renderComments(i);
     }
     
 }
 
+function renderComments(i){
+   
+    //console.log('jetzt werden die komments angezeigt ')
+    const comments = books[i].comments;
+    //console.log(`Kommntare für das ${i} Buch ${comments}`);
+    let input = document.getElementById(`comment-${i}`);
+    input.innerHTML="";
+    for(index=0;index<books[i].comments.length;index++){
+        console.log(comments[index].name);
+        console.log(comments[index].comment);
+        
+        input.innerHTML += htmlComments(comments,index);
+                
+        
+    }
+    
+   
+   
+}
 
-function renderLikeButton(i){
-    let likeStatus = books[i].liked;
+function renderLikeButton(book){
+    let likeStatus = book.liked;
     let likecss;
     if(likeStatus == true)
         likecss= 'heart love';
@@ -31,37 +51,9 @@ function likeButton(i){
     if(likeButton.classList.contains == ""){
         likeButton.classList.add('heart');
     }
-    
 }
 
 
-function htmlTemplate(i,){
-    
-
-    return `<div class="content">
-                <div class="name">
-                    <h2>${books[i].name}</h2>
-                </div>
-                <div class="separator"></div>
-                <div class="imgContainer" id="bookImg">
-                    <img src="./img/${bookImgs[i]}" class="bookPic" alt="BookLayout">
-                </div>
-                <div class="separator"></div>
-                <div class="bookStats" id="bookinfo">
-                    <section class="one">
-                        <h3>${books[i].price} €</h3>
-                        <p id="like-counter">${books[i].likes}<button onclick = "likeButton(${i})" class ="${renderLikeButton(i)}" id="like${i}">
-                            
-                        </button></p>
-                    </section>
-                    <section class="two">
-                        <h4>Author</h4><p>:${books[i].author}</p>
-                        <h4>Erscheinungsjahr</h4><p>:${books[i].publishedYear}</p>
-                        <h4>Genre</h4><p>:${books[i].genre}</p>
-                    </section>
-                </div>
-            </div>`
-}
 //console.log(bookname);
 
 
