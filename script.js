@@ -21,16 +21,14 @@ function renderComments(i){
     let input = document.getElementById(`comment-${i}`);
     input.innerHTML="";
     for(index=0;index<books[i].comments.length;index++){
-        console.log(comments[index].name);
-        console.log(comments[index].comment);
-        
+        //console.log(comments[index].name);
+        //console.log(comments[index].comment);
         input.innerHTML += htmlComments(comments,index);
-                
         
     }
     
    
-   
+  
 }
 
 function renderLikeButton(book){
@@ -46,17 +44,41 @@ function renderLikeButton(book){
 }
 
 function likeButton(i){
-    let likeButton = document.getElementById('like'+i);        
+    let likeButton = document.getElementById('like'+i);
+    likeButton.addEventListener('click', function(){
+        console.log('eventlistner');
+    })        
     likeButton.classList.toggle('love');
     if(likeButton.classList.contains == ""){
         likeButton.classList.add('heart');
     }
 }
 
+function likeCounter(i){
+    const button = document.getElementById('like'+i);
+    let subs = books[i].likes
+    button.addEventListener("click",
+        function(){
+            console.log('eventlister test')});
 
-//console.log(bookname);
+    
+}
+
+function newComment(i){
+    let newcomment = document.getElementById('addcomment-'+i);
+    console.log(newcomment.value);
+    if(newcomment.value ==""){
+        alert("Komentar ist leer");
+    }else{
+        //console.log(books[i].comments.push({name: "Raphael;",comment: newcomment.value}));
+        //console.log(books[i].comments);
+        books[i].comments.push({name: "Raphael;",comment: newcomment.value});
+        //.push(comment);
+    }
+    renderComments(i);
+}
 
 
 
 
-//<img src="./icon/herz.png" alt="herz" class="heartPng">
+

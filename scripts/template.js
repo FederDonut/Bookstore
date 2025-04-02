@@ -24,16 +24,19 @@ function htmlTemplate(i,book){
                     </section>
                 </div>
                 <div class="separator"></div>
-                <div class="">
+                <div class="comment-section">
                     <h3>Kommentare:</h3>    
                     <div id="comment-${i}" class="comments"></div>
-                    <div id="newcomment-${i}"></div>
+                     <div id="newcomment-${i}" class="newcomment">
+                        <input id="addcomment-${i}" type="text"><button onclick="newComment(${i})" class="send-comment"></button>
+                    </div>
                 </div>
             </div>`
 }
 
 function htmlComments(comments,index){
     return `
-            <div><span>${comments[index].name}</span><span>${comments[index].comment}</span></div>
+            <div><span class="name">${comments[index].name}</span><span class="usercoment">${comments[index].comment}</span></div>
+            
     `
 }
