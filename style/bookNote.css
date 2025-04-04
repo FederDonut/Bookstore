@@ -38,6 +38,10 @@ p{
 h4{
     margin: 0;
 }
+.like{
+    display: flex;
+    padding-bottom: 100px;
+}
 .heart{
     height: 40px;
     width: 40px;

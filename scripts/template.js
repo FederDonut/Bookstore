@@ -12,16 +12,16 @@ function htmlTemplate(i,book){
                 <div class="separator"></div>
                 <div class="bookStats" id="bookinfo">
                     <section class="one">
-                        <h3>${book.price} €</h3>
-                        <p id="like-counter">${book.likes}<button onclick = "likeButton(${i})" class ="${renderLikeButton(book)}" id="like${i}">
-                            
-                        </button></p>
-                    </section>
+                        <h3>${book.price} €</h3>   
                     <section class="two">
                         <h4>Author</h4><p>${book.author}</p>
                         <h4>Erscheinungsjahr</h4><p>${book.publishedYear}</p>
                         <h4>Genre</h4><p>${book.genre}</p>
                     </section>
+                    <section class="like">
+                            <p id="like-counter${i}">${book.likes}</p>
+                            <button onclick = "likeButton(${i})" class ="${renderLikeButton(book)}" id="like${i}"></button>
+                        </section>
                 </div>
                 <div class="separator"></div>
                 <div class="comment-section">
@@ -40,3 +40,4 @@ function htmlComments(comments,index){
             
     `
 }
+
